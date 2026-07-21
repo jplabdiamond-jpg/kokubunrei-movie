@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>映画『國分玲』公式サイト｜2026年 全国公開</title>
+<meta name="description" content="2058年から来た未来人――SNSを騒がせた都市伝説を映画化。タイムリープ・ヒューマンサスペンス『國分玲』。主演：船ヶ山哲／美燈みなみ　監督：ロジャー・D・コーエン　2026年 全国公開。">
+<meta name="theme-color" content="#050506">
+<link rel="icon" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="映画『國分玲』公式サイト">
+<meta property="og:description" content="未来は決まっているのか。それとも、人は運命を書き換えることができるのか。2026年 全国公開。">
+<meta property="og:image" content="images/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Oswald:wght@300;500;700&amp;display=swap" rel="stylesheet">
+<style>
+/* ============ base ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:#050506;color:#d8d5d0;
+  font-family:"Zen Kaku Gothic New",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+  font-size:15px;line-height:1.95;letter-spacing:.045em;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:#8b0d17;color:#fff}
+:root{
+  --red:#c1121f;
+  --red-hot:#ff2323;
+  --ink:#050506;
+  --paper:#e8e4dd;
+  --dim:#8d8880;
+  --mincho:"Shippori Mincho",serif;
+  --num:"Oswald",sans-serif;
+}
+.wrap{width:min(1120px,88vw);margin-inline:auto}
+.mincho{font-family:var(--mincho)}
+
+/* ============ loader ============ */
+#loader{
+  position:fixed;inset:0;z-index:9999;background:#000;
+  display:grid;place-items:center;transition:opacity .8s .3s,visibility .8s .3s;
+}
+#loader.done{opacity:0;visibility:hidden}
+.load-num{
+  font-family:var(--num);font-size:clamp(56px,14vw,140px);font-weight:300;
+  color:#fff;letter-spacing:.12em;line-height:1;
+  text-shadow:0 0 24px rgba(193,18,31,.65);
+  animation:ldflk 2.4s infinite steps(1);
+}
+.load-cap{
+  text-align:center;font-size:10px;letter-spacing:.6em;color:#5c5852;margin-top:18px;
+}
+@keyframes ldflk{0%,92%{opacity:1}93%{opacity:.25}94%{opacity:1}97%{opacity:.5}98%{opacity:1}}
+
+/* ============ global overlays ============ */
+.fx{position:fixed;inset:0;pointer-events:none;z-index:900}
+.fx-noise{
+  opacity:.055;mix-blend-mode:screen;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  animation:grain .5s steps(4) infinite;
+}
+@keyframes grain{
+  0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}
+  50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-2%)}100%{transform:translate(3%,1%)}
+}
+.fx-scan{
+  background:repeating-linear-gradient(to bottom,rgba(255,255,255,.028) 0 1px,transparent 1px 3px);
+  opacity:.8;
+}
+.fx-scan::after{
+  content:"";position:absolute;left:0;right:0;height:140px;
+  background:linear-gradient(to bottom,transparent,rgba(255,255,255,.045),transparent);
+  animation:sweep 7s linear infinite;
+}
+@keyframes sweep{0%{top:-160px}100%{top:110%}}
+.fx-vig{box-shadow:inset 0 0 min(28vw,300px) rgba(0,0,0,.95);background:radial-gradient(ellipse at 50% 40%,transparent 45%,rgba(0,0,0,.55) 100%)}
+.fx-flash{background:#fff;opacity:0;z-index:901}
+.fx-flash.on{animation:flash .32s steps(3)}
+@keyframes flash{0%{opacity:.5}30%{opacity:0}55%{opacity:.28}100%{opacity:0}}
+
+/* ============ header ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:800;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(16px,4vw,42px);
+  background:linear-gradient(to bottom,rgba(5,5,6,.92),rgba(5,5,6,0));
+  transition:background .4s;
+}
+header.solid{background:rgba(5,5,6,.93);border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(6px)}
+.logo{font-family:var(--mincho);font-weight:800;font-size:19px;letter-spacing:.3em;color:#fff}
+.logo b{color:var(--red-hot);font-weight:800}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav a{font-size:11px;letter-spacing:.28em;color:#9a948c;transition:color .3s;position:relative}
+nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--red-hot);transition:width .35s}
+nav a:hover{color:#fff}nav a:hover::after{width:100%}
+.burger{display:none;width:34px;height:24px;position:relative;background:none;border:0;cursor:pointer;z-index:810}
+.burger span{position:absolute;left:0;width:100%;height:1.5px;background:#fff;transition:.35s}
+.burger span:nth-child(1){top:2px}.burger span:nth-child(2){top:11px}.burger span:nth-child(3){top:20px}
+.burger.open span:nth-child(1){top:11px;transform:rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){top:11px;transform:rotate(-45deg)}
+@media(max-width:860px){
+  .burger{display:block}
+  nav{position:fixed;inset:0;background:rgba(3,3,4,.97);display:grid;place-items:center;
+      opacity:0;visibility:hidden;transition:.45s}
+  nav.open{opacity:1;visibility:visible}
+  nav ul{flex-direction:column;gap:30px;text-align:center}
+  nav a{font-size:14px;letter-spacing:.4em}
+}
+
+/* ============ hero ============ */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-6%;z-index:-2;
+  background:url(images/kv-main.jpg) center/cover no-repeat;
+  filter:grayscale(.35) contrast(1.12) brightness(.62);
+  animation:breathe 16s ease-in-out infinite alternate;will-change:transform}
+@keyframes breathe{0%{transform:scale(1.04)}100%{transform:scale(1.14) translateY(-1.5%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(ellipse at 50% 55%,rgba(0,0,0,.15),rgba(3,3,4,.9) 78%)}
+.hero-inner{text-align:center;padding:90px 5vw 130px;position:relative}
+.hero-eyebrow{
+  font-size:10px;letter-spacing:.55em;color:#a29b92;margin-bottom:30px;
+  opacity:0;animation:fadeUp 1.2s 1.6s forwards}
+.hero-eyebrow em{color:var(--red-hot);font-style:normal}
+
+/* glitch title */
+.gtitle{
+  position:relative;display:inline-block;font-family:var(--mincho);font-weight:800;
+  font-size:clamp(58px,15vw,168px);line-height:1;color:#fff;letter-spacing:.06em;
+  margin:0;text-shadow:0 0 40px rgba(0,0,0,.9);
+  opacity:0;animation:titleIn 1.6s .9s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes titleIn{0%{opacity:0;filter:blur(18px);transform:scale(1.12)}100%{opacity:1;filter:blur(0);transform:scale(1)}}
+.gtitle::before,.gtitle::after{
+  content:attr(data-t);position:absolute;inset:0;pointer-events:none}
+.gtitle::before{color:var(--red-hot);mix-blend-mode:screen;animation:gl1 4.6s infinite steps(1)}
+.gtitle::after{color:#22d3ee;mix-blend-mode:screen;animation:gl2 4.6s infinite steps(1)}
+@keyframes gl1{
+  0%,88%{transform:none;opacity:0;clip-path:none}
+  89%{opacity:.9;transform:translate(-5px,2px);clip-path:inset(12% 0 62% 0)}
+  91%{opacity:.9;transform:translate(6px,-3px);clip-path:inset(58% 0 18% 0)}
+  93%{opacity:.9;transform:translate(-3px,0);clip-path:inset(35% 0 45% 0)}
+  95%,100%{opacity:0;transform:none}}
+@keyframes gl2{
+  0%,88%{opacity:0}
+  89.5%{opacity:.75;transform:translate(5px,-2px);clip-path:inset(30% 0 40% 0)}
+  92%{opacity:.75;transform:translate(-6px,3px);clip-path:inset(70% 0 8% 0)}
+  95%,100%{opacity:0;transform:none}}
+.gtitle:hover::before{animation-duration:.9s}
+.gtitle:hover::after{animation-duration:.9s}
+
+.hero-en{font-family:var(--num);font-weight:300;font-size:clamp(10px,2.4vw,14px);
+  letter-spacing:.62em;color:#8f8981;margin:26px 0 0;
+  opacity:0;animation:fadeUp 1.2s 1.9s forwards}
+.hero-copy{font-family:var(--mincho);font-size:clamp(14px,3.4vw,20px);color:#cfcac2;
+  margin:44px auto 0;max-width:34em;line-height:2.4;
+  opacity:0;animation:fadeUp 1.4s 2.2s forwards}
+.hero-copy .hl{color:#fff;border-bottom:1px solid rgba(193,18,31,.7);padding-bottom:2px}
+.hero-release{margin-top:52px;opacity:0;animation:fadeUp 1.2s 2.6s forwards}
+.hero-release .y{font-family:var(--num);font-size:clamp(30px,8vw,64px);font-weight:500;
+  color:#fff;letter-spacing:.06em;display:block;line-height:1;
+  text-shadow:0 0 26px rgba(193,18,31,.5)}
+.hero-release .t{font-family:var(--mincho);font-size:clamp(15px,4vw,24px);color:#fff;letter-spacing:.4em;margin-top:14px;display:block}
+.hero-release .s{font-family:var(--num);font-size:11px;letter-spacing:.5em;color:var(--red-hot);margin-top:18px;display:block;animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.45}50%{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  font-family:var(--num);font-size:9px;letter-spacing:.5em;color:#6d6862;text-align:center}
+.scrollcue i{display:block;width:1px;height:56px;margin:12px auto 0;background:linear-gradient(#6d6862,transparent);
+  animation:cue 2.2s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ ticker ============ */
+.ticker{border-block:1px solid rgba(255,255,255,.08);background:#08080a;overflow:hidden;padding:13px 0}
+.ticker-row{display:flex;width:max-content;animation:slide 40s linear infinite}
+.ticker span{font-family:var(--num);font-size:12px;letter-spacing:.42em;color:#5f5a54;padding:0 26px;white-space:nowrap}
+.ticker span em{color:var(--red);font-style:normal}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ sections ============ */
+section{position:relative;padding:clamp(80px,13vw,150px) 0}
+.sec-head{margin-bottom:clamp(38px,6vw,66px);position:relative}
+.sec-head .en{font-family:var(--num);font-size:clamp(38px,9vw,84px);font-weight:300;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.16);letter-spacing:.08em;line-height:1;display:block}
+.sec-head .ja{font-family:var(--mincho);font-size:15px;letter-spacing:.42em;color:var(--red-hot);margin-top:10px;display:block}
+.sec-head .ja::before{content:"／ "}
+
+.reveal{opacity:0;transform:translateY(38px);filter:blur(6px);
+  transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1),filter 1s}
+.reveal.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+
+/* introduction */
+#introduction{background:linear-gradient(180deg,#050506,#0a0a0d 45%,#050506)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,72px);align-items:start}
+@media(max-width:860px){.intro-grid{grid-template-columns:1fr}}
+.intro-lead{font-family:var(--mincho);font-size:clamp(19px,4.6vw,30px);line-height:2.1;color:#fff;margin:0 0 34px}
+.intro-lead .r{color:var(--red-hot)}
+.intro-body p{margin:0 0 1.6em;color:#a9a49c;font-size:14.5px}
+.intro-body p strong{color:#e9e5df;font-weight:500}
+.intro-visual{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.intro-visual img{filter:grayscale(.4) brightness(.78) contrast(1.1);transition:filter 1.1s,transform 1.4s}
+.intro-visual:hover img{filter:grayscale(0) brightness(.95);transform:scale(1.04)}
+.intro-visual::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,transparent 40%,rgba(193,18,31,.16),transparent 60%);
+  animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,70%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+
+/* quote band */
+.quote{padding:clamp(70px,11vw,120px) 0;text-align:center;background:#020203;border-block:1px solid rgba(255,255,255,.06)}
+.quote p{font-family:var(--mincho);font-size:clamp(19px,5vw,38px);line-height:2;color:#fff;margin:0;
+  text-shadow:0 0 30px rgba(193,18,31,.35)}
+.quote .flicker{animation:flk 5s infinite steps(1)}
+@keyframes flk{0%,86%{opacity:1}87%{opacity:.15}88%{opacity:1}90%{opacity:.35}91%{opacity:1}96%{opacity:.6}97%{opacity:1}}
+
+/* movie */
+#movie{background:#08080a}
+.movies{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,4vw,44px)}
+@media(max-width:860px){.movies{grid-template-columns:1fr}}
+.mv-label{font-family:var(--num);font-size:11px;letter-spacing:.45em;color:var(--red-hot);margin-bottom:14px}
+.mv-frame{position:relative;aspect-ratio:16/9;border:1px solid rgba(255,255,255,.1);background:#000;overflow:hidden}
+.mv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mv-frame::after{content:"";position:absolute;inset:0;pointer-events:none;
+  box-shadow:inset 0 0 60px rgba(0,0,0,.7)}
+
+/* story */
+#story{background:#050506;position:relative;overflow:hidden}
+.story-bg{position:absolute;inset:0;background:url(images/still-04.jpg) center/cover;
+  opacity:.16;filter:grayscale(1) contrast(1.3);z-index:0}
+#story .wrap{position:relative;z-index:1}
+.story-body{max-width:min(760px,92%);margin-inline:auto}
+.story-body p{font-family:var(--mincho);font-size:clamp(14.5px,3.7vw,17px);line-height:2.5;
+  color:#bdb8b0;margin:0 0 2em;text-indent:1em}
+.story-body p.emp{color:#fff;text-indent:0;font-size:clamp(16px,4.2vw,21px);
+  border-left:2px solid var(--red);padding-left:1.2em}
+
+/* cast */
+#cast{background:linear-gradient(180deg,#050506,#0b0b0e)}
+.cast-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,34px)}
+@media(max-width:900px){.cast-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.cast-grid{grid-template-columns:1fr}}
+.cast-card{position:relative;background:#0c0c0f;border:1px solid rgba(255,255,255,.07);overflow:hidden}
+.cast-photo{position:relative;aspect-ratio:3/4;overflow:hidden;background:#000}
+.cast-photo img{width:100%;height:100%;object-fit:cover;
+  filter:grayscale(.85) contrast(1.15) brightness(.72);
+  transition:filter .9s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1)}
+.cast-card:hover .cast-photo img{filter:grayscale(0) brightness(.95);transform:scale(1.07)}
+.cast-photo::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(5,5,6,.95) 4%,rgba(5,5,6,.1) 55%);pointer-events:none}
+.cast-photo::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,rgba(255,0,0,.05) 0 2px,transparent 2px 4px);
+  opacity:0;transition:opacity .4s}
+.cast-card:hover .cast-photo::before{opacity:1;animation:jitter .18s steps(2) infinite}
+@keyframes jitter{0%{transform:translateX(0)}50%{transform:translateX(2px)}100%{transform:translateX(-1px)}}
+.cast-role{position:absolute;left:16px;bottom:56px;z-index:3;font-size:10.5px;letter-spacing:.32em;color:var(--red-hot)}
+.cast-name{position:absolute;left:16px;bottom:18px;z-index:3;font-family:var(--mincho);
+  font-size:clamp(19px,4.4vw,25px);color:#fff;letter-spacing:.12em;font-weight:700}
+.cast-bio{padding:20px 18px 24px;font-size:12.5px;line-height:2.05;color:#8f8a83}
+.cast-bio b{color:#c9c4bd;font-weight:500}
+
+/* gallery */
+#gallery{background:#020203}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+@media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)}}
+.gal a{position:relative;overflow:hidden;aspect-ratio:16/9;background:#000;display:block;cursor:pointer}
+.gal a:nth-child(1),.gal a:nth-child(8){grid-column:span 2;grid-row:span 2;aspect-ratio:16/9}
+@media(max-width:860px){.gal a:nth-child(1),.gal a:nth-child(8){grid-column:span 2;grid-row:auto}}
+.gal img{width:100%;height:100%;object-fit:cover;filter:grayscale(.7) brightness(.68) contrast(1.15);
+  transition:filter .8s,transform 1.1s cubic-bezier(.16,1,.3,1)}
+.gal a:hover img{filter:grayscale(0) brightness(1);transform:scale(1.06)}
+.gal a::after{content:"";position:absolute;inset:0;background:rgba(193,18,31,0);transition:background .5s;mix-blend-mode:multiply}
+.gal a:hover::after{background:rgba(193,18,31,.12)}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:950;background:rgba(2,2,3,.97);display:none;place-items:center;padding:5vw;cursor:zoom-out}
+#lb.on{display:grid;animation:lbin .4s}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+#lb img{max-width:100%;max-height:88vh;object-fit:contain;border:1px solid rgba(255,255,255,.12)}
+#lb .close{position:absolute;top:22px;right:26px;font-family:var(--num);font-size:12px;letter-spacing:.3em;color:#8f8a83}
+
+/* staff */
+#staff{background:#050506}
+.staff-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(24px,5vw,60px)}
+@media(max-width:700px){.staff-list{grid-template-columns:1fr}}
+.staff-row{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07);
+  font-size:13px;align-items:baseline}
+.staff-row dt{flex:0 0 8.5em;color:#736e68;font-size:11px;letter-spacing:.22em}
+.staff-row dd{margin:0;color:#ded9d2}
+.credit-block{margin-top:clamp(46px,7vw,72px);text-align:center;font-size:12.5px;line-height:2.4;color:#8b867f}
+.credit-block .stars{font-family:var(--mincho);font-size:clamp(16px,4.4vw,22px);color:#fff;letter-spacing:.16em;line-height:2.1;margin-bottom:8px}
+.credit-block .stars .sep{color:var(--red);padding:0 .4em}
+.credit-block .copy{margin-top:30px;font-family:var(--num);font-size:10px;letter-spacing:.28em;color:#5c5852}
+
+/* sns / footer */
+#sns{background:#020203;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.sns-links{display:flex;justify-content:center;gap:clamp(14px,3vw,26px);flex-wrap:wrap}
+.sns-btn{display:inline-flex;align-items:center;gap:11px;padding:16px 30px;
+  border:1px solid rgba(255,255,255,.18);font-family:var(--num);font-size:12px;letter-spacing:.3em;
+  color:#cfcac2;position:relative;overflow:hidden;transition:color .4s,border-color .4s}
+.sns-btn span{position:relative;z-index:1}
+.sns-btn::before{content:"";position:absolute;inset:0;background:var(--red);
+  transform:translateY(101%);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.sns-btn:hover{color:#fff;border-color:var(--red)}
+.sns-btn:hover::before{transform:translateY(0)}
+.sns-note{margin-top:26px;font-size:11px;color:#5f5a54;letter-spacing:.14em}
+footer{background:#000;text-align:center;padding:44px 5vw;border-top:1px solid rgba(255,255,255,.06)}
+.f-logo{font-family:var(--mincho);font-size:17px;letter-spacing:.42em;color:#fff;font-weight:700}
+.f-copy{margin-top:16px;font-family:var(--num);font-size:9.5px;letter-spacing:.26em;color:#4f4b46}
+
+/* accessibility */
+:focus-visible{outline:2px solid var(--red-hot);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none;filter:none}
+  .hero-eyebrow,.gtitle,.hero-en,.hero-copy,.hero-release{opacity:1;animation:none}
+}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div>
+    <div class="load-num" id="loadNum">2058</div>
+    <div class="load-cap">NOW LOADING</div>
+  </div>
+</div>
+
+<div class="fx fx-noise" aria-hidden="true"></div>
+<div class="fx fx-scan" aria-hidden="true"></div>
+<div class="fx fx-vig" aria-hidden="true"></div>
+<div class="fx fx-flash" id="flash" aria-hidden="true"></div>
+
+<header id="hd">
+  <a href="#top" class="logo">國分<b>玲</b></a>
+  <button class="burger" id="burger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <ul>
+      <li><a href="#introduction">INTRODUCTION</a></li>
+      <li><a href="#movie">MOVIE</a></li>
+      <li><a href="#story">STORY</a></li>
+      <li><a href="#cast">CAST</a></li>
+      <li><a href="#gallery">GALLERY</a></li>
+      <li><a href="#staff">STAFF</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="top">
+  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">2058年から来た未来人――<em>その記録は、実在した。</em></p>
+    <h1 class="gtitle" data-t="國分玲">國分玲</h1>
+    <p class="hero-en">R E I &nbsp; K O K U B U N</p>
+    <p class="hero-copy">未来は決まっているのか。<br>それとも、人は<span class="hl">運命を書き換える</span>ことができるのか。</p>
+    <div class="hero-release">
+      <span class="y">2026</span>
+      <span class="t">全国公開</span>
+      <span class="s">COMING SOON</span>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true">SCROLL<i></i></div>
+</div>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-row" id="tick">
+    <span>2019.12.08 &nbsp;/&nbsp; 謎の人物、Twitterに出現</span>
+    <span><em>●</em></span>
+    <span>FOLLOWERS &nbsp;530,000+</span>
+    <span><em>●</em></span>
+    <span>2020.09.30 &nbsp;/&nbsp; 「元の世界に戻れなくなった」</span>
+    <span><em>●</em></span>
+    <span>TIME LEAP HUMAN SUSPENSE</span>
+    <span><em>●</em></span>
+    <span>¥350,000,000,000</span>
+    <span><em>●</em></span>
+  </div>
+</div>
+
+<!-- ============ INTRODUCTION ============ -->
+<section id="introduction">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">INTRODUCTION</span>
+      <span class="ja">イントロダクション</span>
+    </div>
+    <div class="intro-grid">
+      <div>
+        <p class="intro-lead reveal">ネットに実在した都市伝説が、<br><span class="r">壮大なタイムリープ</span>となって<br>スクリーンへ。</p>
+        <div class="intro-body reveal d1">
+          <p>2019年12月8日、Twitterに突如現れた謎の人物・<strong>國分玲（こくぶんれい）</strong>。彼は「2058年から来た未来人」を名乗り、「2020年9月29日までこの時代に滞在する」と投稿。その後、未来に関する数々の予言を発信し、インターネット上で大きな話題となりました。</p>
+          <p>開催約2年前に東京オリンピックで日本が獲得する金メダル数を予言したとされ、その内容が現実と一致したことで注目を集め、フォロワーは一時<strong>53万人</strong>を突破。2020年9月30日に「元の世界に戻れなくなった」と意味深な投稿を残して姿を消し、約1年後に突然復帰したことでも、多くの謎を残しています。</p>
+        </div>
+      </div>
+      <div>
+        <div class="intro-visual reveal d2">
+          <img src="images/kv-wide.jpg" alt="映画『國分玲』キービジュアル" loading="lazy" width="1920" height="1080">
+        </div>
+        <div class="intro-body reveal d3" style="margin-top:34px">
+          <p>本作『國分玲』は、このインターネット上で語り継がれる都市伝説をモチーフに、壮大なスケールで描く<strong>タイムリープ・ヒューマンサスペンス</strong>です。</p>
+          <p>主人公・國分玲を演じるのは、俳優・歌手・作家として活躍する<strong>船ヶ山哲</strong>。ベストセラー『捨てられた僕と母猫と奇跡』の著者でもある船ヶ山が、運命に抗い未来を変えようとする男を熱演します。ダブル主演は、数々の主演作で注目を集める<strong>美燈みなみ</strong>。物語の鍵を握る謎の存在・北山華を演じ、新たな魅力を見せます。</p>
+          <p>監督は、映画『祝山』で演出助手を務めた<strong>ロジャー・D・コーエン</strong>。本作で商業映画監督デビューを果たし、緻密な人間ドラマとスリリングなサスペンスを融合させた映像世界を創り上げました。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quote">
+  <p class="mincho">現実とフィクションが交錯する<span class="flicker">衝撃</span>の物語が、<br>いま幕を開ける。</p>
+</div>
+
+<!-- ============ MOVIE ============ -->
+<section id="movie">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">MOVIE</span>
+      <span class="ja">特報・予告編</span>
+    </div>
+    <div class="movies">
+      <div class="reveal d1">
+        <p class="mv-label">TEASER ／ 特報</p>
+        <div class="mv-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/kWtpmEqeeUA?rel=0" title="映画『國分玲』特報" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <p class="mv-label">TRAILER ／ 予告</p>
+        <div class="mv-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/nwv_XC2ZPWY?rel=0" title="映画『國分玲』予告編" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="story-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">STORY</span>
+      <span class="ja">ストーリー</span>
+    </div>
+    <div class="story-body">
+      <p class="reveal">大学教授・國分玲は、タイムマシンの研究に人生を捧げながらも、資金難に苦しむ日々を送っていた。そんなある日、謎の女性・北山華が現れ、「未来で返してください」と言い残し、玲の口座へ<strong>3500億円</strong>という莫大な資金を振り込む。</p>
+      <p class="reveal d1">一方、発明家・古田は、玲とともに廃墟の地下に眠る不可解な現象を調査し、その場所こそ時空を超える鍵であると確信する。過去へ行くことを夢見る古田、そして未来を知るかのように行動する華。やがて玲は、時間そのものを揺るがす壮大な計画へと巻き込まれていく。</p>
+      <p class="reveal d2">その頃、7年間眠り続けていた少女・和子が奇跡的に目を覚ます。彼女の前に現れた謎の男・豊富は、「あなたはただ、生きて記録してください」とだけ告げる。和子が目撃する出来事は、玲たちの運命と少しずつ交錯し始める。</p>
+      <p class="emp reveal d3">過去は変えられるのか。<br>それとも未来はすでに決まっているのか。</p>
+      <p class="reveal d3">時空を超える研究の先で明かされる真実、家族への想い、そして避けることのできない運命――。SNSで話題となった「2058年から来た未来人・國分玲」の都市伝説をモチーフに、タイムリープ、ヒューマンドラマ、サスペンスを融合させた壮大な物語。<strong>最後に明かされる衝撃の真実が、あなたの「時間」の常識を覆す。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAST ============ -->
+<section id="cast">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">CAST</span>
+      <span class="ja">キャスト</span>
+    </div>
+    <div class="cast-grid">
+
+      <article class="cast-card reveal">
+        <div class="cast-photo">
+          <img src="images/cast-funagayama.jpg" alt="國分玲役・船ヶ山哲" loading="lazy">
+          <span class="cast-role">國分玲 役</span>
+          <span class="cast-name">船ヶ山 哲</span>
+        </div>
+        <div class="cast-bio">
+          1976年生まれ、神奈川県出身。俳優、歌手として活動する傍ら作家としての顔を持つ。書籍<b>『捨てられた僕と母猫と奇跡』</b>は14万部のベストセラー。2026年の主な出演作に、映画『祝山』『３６１』『#拡散』『ポロロ（アニメ）』、ドラマ『おちたらおわり』（日本テレビ）『キスは捜査のあとで』（朝日放送）『ドラマが飛んだ』（東海テレビ）などがある。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d1">
+        <div class="cast-photo">
+          <img src="images/cast-mitou.jpg" alt="北山華役・美燈みなみ" loading="lazy">
+          <span class="cast-role">北山華 役</span>
+          <span class="cast-name">美燈 みなみ</span>
+        </div>
+        <div class="cast-bio">
+          東京都出身。女優・脚本家として映画、ドラマ、CMなど幅広く活躍。2026年は映画<b>『悪役令嬢』</b>で主演・原作・脚本を務め、『ギラギラ2』『求婚者番号1997の叫び』など話題作に出演。2025年には主演作『回遊魚の涙』が海外映画祭で高い評価を受ける。縦型ドラマや中国作品にも多数出演し、モデル・CMでも活躍。BUZZFES初代キング＆クイーン優勝、ヨーロッパブランド「CYRCON」モデル・公式アンバサダー。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d2">
+        <div class="cast-photo">
+          <img src="images/cast-miyazaki.jpg" alt="北山和子役・宮崎あみさ" loading="lazy">
+          <span class="cast-role">北山和子 役</span>
+          <span class="cast-name">宮崎 あみさ</span>
+        </div>
+        <div class="cast-bio">
+          2002年10月28日生まれ、東京都出身。スーパー戦隊シリーズ<b>『暴太郎戦隊ドンブラザーズ』</b>にてソノニ役でレギュラー出演し注目を集め、その後も『東京彼女11月号』『愚痴と恋は止まらない』など話題作に出演。2026年には日本テレビ『ファーストクライ 母子救命緊急班』に出演。透明感あふれる存在感と確かな演技力で、次世代を担う若手女優として期待を集めている。
+        </div>
+      </article>
+
+      <article class="cast-card reveal">
+        <div class="cast-photo">
+          <img src="images/cast-furuya.jpg" alt="古田独役・フルヤトモヒロ" loading="lazy">
+          <span class="cast-role">古田独 役</span>
+          <span class="cast-name">フルヤトモヒロ</span>
+        </div>
+        <div class="cast-bio">
+          1981年生まれ、静岡県裾野市出身。シンガーとして「ACO CHiLL CAMP」「ROCKS FORCHILE」等の音楽フェスへのライブ出演に加え、CMソング、スポーツチーム公式ソング等の楽曲提供を行う。趣味の<b>【特撮】</b>の知識を活かし関連イベントでMCを担当。ラジオ専門全国誌「ラジオ番組表」内「好きなDJランキング」全国第1位。TOKYO MXアニメ『クロノブレイバーズ』主題歌を作詞・作曲・編曲・歌唱。裾野市観光・スポーツ大使。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d1">
+        <div class="cast-photo">
+          <img src="images/cast-mase.jpg" alt="間瀬英正" loading="lazy">
+          <span class="cast-role">CAST</span>
+          <span class="cast-name">間瀬 英正</span>
+        </div>
+        <div class="cast-bio">
+          1978年8月18日生まれ、愛知県出身。確かな存在感と高い演技力で映画・ドラマ・舞台を中心に活躍する実力派俳優。主演映画<b>『コントラ-KONTORA』</b>で第15回大阪アジアン映画祭最優秀男優賞を受賞。近年は映画『ゴジラ-1.0』『首』『爽子の衝動』『TIGER』、ドラマ『ドラゴン桜』『相棒』などに出演。絵画・イラストレーションを特技とし、劇中画制作や絵画指導でも才能を発揮している。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d2">
+        <div class="cast-photo">
+          <img src="images/cast-sato.jpg" alt="佐藤里穂" loading="lazy">
+          <span class="cast-role">CAST</span>
+          <span class="cast-name">佐藤 里穂</span>
+        </div>
+        <div class="cast-bio">
+          1990年12月18日生まれ、東京都出身。映画、ドラマ、CM、舞台など幅広い分野で活躍する女優。主演映画<b>『火だるま槐多よ』『背中』</b>をはじめ、『福田村事件』『2025年7月5日午前4時18分』などに出演。ドラマではNetflix『全裸監督2』、FOD『REAL恋愛殺人捜査班』などに出演し、繊細で確かな演技力が高く評価されている。近年は三菱UFJ銀行、食べログ、メグミルクなど数多くのCMにも起用。
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">GALLERY</span>
+      <span class="ja">場面写真</span>
+    </div>
+    <div class="gal reveal d1" id="gal">
+      <a data-src="images/still-01.jpg"><img src="images/still-01.jpg" alt="場面写真 1" loading="lazy"></a>
+      <a data-src="images/still-02.jpg"><img src="images/still-02.jpg" alt="場面写真 2" loading="lazy"></a>
+      <a data-src="images/still-03.jpg"><img src="images/still-03.jpg" alt="場面写真 3" loading="lazy"></a>
+      <a data-src="images/still-05.jpg"><img src="images/still-05.jpg" alt="場面写真 4" loading="lazy"></a>
+      <a data-src="images/still-06.jpg"><img src="images/still-06.jpg" alt="場面写真 5" loading="lazy"></a>
+      <a data-src="images/still-04.jpg"><img src="images/still-04.jpg" alt="場面写真 6" loading="lazy"></a>
+      <a data-src="images/still-07.jpg"><img src="images/still-07.jpg" alt="場面写真 7" loading="lazy"></a>
+      <a data-src="images/still-08.jpg"><img src="images/still-08.jpg" alt="場面写真 8" loading="lazy"></a>
+      <a data-src="images/still-09.jpg"><img src="images/still-09.jpg" alt="場面写真 9" loading="lazy"></a>
+      <a data-src="images/still-10.jpg"><img src="images/still-10.jpg" alt="場面写真 10" loading="lazy"></a>
+      <a data-src="images/still-11.jpg"><img src="images/still-11.jpg" alt="場面写真 11" loading="lazy"></a>
+      <a data-src="images/kv-wide.jpg"><img src="images/kv-wide.jpg" alt="場面写真 12" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<div id="lb" role="dialog" aria-label="拡大画像" aria-hidden="true">
+  <span class="close">CLOSE ×</span>
+  <img src="" alt="">
+</div>
+
+<!-- ============ STAFF ============ -->
+<section id="staff">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">STAFF</span>
+      <span class="ja">スタッフ</span>
+    </div>
+    <dl class="staff-list reveal d1">
+      <div class="staff-row"><dt>脚本・編集・監督</dt><dd>ロジャー・D・コーエン</dd></div>
+      <div class="staff-row"><dt>プロデューサー</dt><dd>田中健太／徳田進之介／佐々木海</dd></div>
+      <div class="staff-row"><dt>キャスティングP</dt><dd>永井直子</dd></div>
+      <div class="staff-row"><dt>題字</dt><dd>月ヶ瀬なつ</dd></div>
+      <div class="staff-row"><dt>音楽</dt><dd>Krilena</dd></div>
+      <div class="staff-row"><dt>撮影</dt><dd>古川大晃</dd></div>
+      <div class="staff-row"><dt>録音</dt><dd>一木亮二／牛之濱誠康</dd></div>
+      <div class="staff-row"><dt>スタイリスト</dt><dd>日下部実来</dd></div>
+      <div class="staff-row"><dt>ヘアメイク</dt><dd>新城聖梨</dd></div>
+      <div class="staff-row"><dt>助監督</dt><dd>勝又郁斗</dd></div>
+      <div class="staff-row"><dt>制作担当</dt><dd>軽石</dd></div>
+      <div class="staff-row"><dt>制作協力</dt><dd>(株)洋海碧緑</dd></div>
+      <div class="staff-row"><dt>企画・製作・配給</dt><dd>株式会社STUDIO STROLE</dd></div>
+    </dl>
+
+    <div class="credit-block reveal d2">
+      <p class="stars">船ヶ山哲<span class="sep">／</span>美燈みなみ</p>
+      <p>宮崎あみさ　フルヤトモヒロ<br>
+      佐藤せるてぃあ　水谷淳　松本カズマ　徳由美子<br>
+      うさのみゆ　星乃ひかり　三毛野みい　白音みなみ　ゆーりん　へち　goodboy5213<br>
+      佐藤里穂 ／ 間瀬英正 ／ 鈴木成児</p>
+      <p class="copy">©映画「國分玲」製作委員会</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SNS ============ -->
+<section id="sns">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center">
+      <span class="en">FOLLOW</span>
+      <span class="ja">公式SNS</span>
+    </div>
+    <div class="sns-links reveal d1">
+      <a class="sns-btn" href="https://www.instagram.com/rei_kokubun_movie" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM</span></a>
+      <a class="sns-btn" href="https://www.tiktok.com/@2058reikokubun_movie" target="_blank" rel="noopener noreferrer"><span>TIKTOK</span></a>
+    </div>
+    <p class="sns-note reveal d2">@rei_kokubun_movie ／ @2058reikokubun_movie</p>
+  </div>
+</section>
+
+<footer>
+  <p class="f-logo">國分玲</p>
+  <p class="f-copy">©映画「國分玲」製作委員会 &nbsp;/&nbsp; STUDIO STROLE</p>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- loader : countdown 2058 -> 2026 ---- */
+  var ln = document.getElementById('loadNum'), ld = document.getElementById('loader');
+  var n = 2058, timer;
+  function endLoad(){
+    clearInterval(timer);
+    ln.textContent = '2026';
+    setTimeout(function(){ ld.classList.add('done'); document.body.style.overflow=''; }, 500);
+  }
+  document.body.style.overflow='hidden';
+  if(reduce){ endLoad(); }
+  else{
+    timer = setInterval(function(){
+      n -= Math.ceil(Math.random()*4);
+      if(n <= 2026){ endLoad(); return; }
+      ln.textContent = n;
+    }, 45);
+    setTimeout(endLoad, 3000);
+  }
+
+  /* ---- header state ---- */
+  var hd = document.getElementById('hd');
+  var onScroll = function(){
+    hd.classList.toggle('solid', window.scrollY > 80);
+    if(!reduce){
+      var b = document.getElementById('heroBg');
+      if(b && window.scrollY < window.innerHeight*1.2){
+        b.style.transform = 'translateY(' + (window.scrollY*0.22) + 'px)';
+      }
+    }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---- burger ---- */
+  var bg = document.getElementById('burger'), nv = document.getElementById('nav');
+  bg.addEventListener('click', function(){
+    var open = nv.classList.toggle('open');
+    bg.classList.toggle('open', open);
+    bg.setAttribute('aria-expanded', open);
+  });
+  nv.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ nv.classList.remove('open'); bg.classList.remove('open'); bg.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ---- scroll reveal ---- */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* ---- ticker duplicate for seamless loop ---- */
+  var tk = document.getElementById('tick');
+  tk.innerHTML += tk.innerHTML;
+
+  /* ---- random subliminal flash ---- */
+  if(!reduce){
+    var fl = document.getElementById('flash');
+    (function loop(){
+      var wait = 14000 + Math.random()*22000;
+      setTimeout(function(){
+        fl.classList.add('on');
+        setTimeout(function(){ fl.classList.remove('on'); }, 400);
+        loop();
+      }, wait);
+    })();
+  }
+
+  /* ---- lightbox ---- */
+  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.getElementById('gal').addEventListener('click', function(e){
+    var a = e.target.closest('a'); if(!a) return;
+    e.preventDefault();
+    lbImg.src = a.dataset.src; lb.classList.add('on'); lb.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  });
+  function closeLb(){ lb.classList.remove('on'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeLb(); });
+})();
+</script>
+</body>
+</html>
