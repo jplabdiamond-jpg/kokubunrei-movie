@@ -116,14 +116,9 @@ nav a:hover{color:#fff}nav a:hover::after{width:100%}
 /* ============ hero ============ */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:-6%;z-index:-2;
+  background:url(images/kv-main.jpg) center/cover no-repeat;
   filter:grayscale(.35) contrast(1.12) brightness(.62);
   animation:breathe 16s ease-in-out infinite alternate;will-change:transform}
-.kv-slide{position:absolute;inset:0;background-position:center;background-size:cover;
-  background-repeat:no-repeat;opacity:0;animation:kvfade 18s infinite}
-.kv-slide:nth-child(1){opacity:1;animation-delay:-2s}
-.kv-slide:nth-child(2){animation-delay:4s}
-.kv-slide:nth-child(3){animation-delay:10s}
-@keyframes kvfade{0%{opacity:0}6%{opacity:1}28%{opacity:1}34%{opacity:0}100%{opacity:0}}
 @keyframes breathe{0%{transform:scale(1.04)}100%{transform:scale(1.14) translateY(-1.5%)}}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;
   background:radial-gradient(ellipse at 50% 55%,rgba(0,0,0,.15),rgba(3,3,4,.9) 78%)}
@@ -358,11 +353,7 @@ html{scroll-behavior:smooth}
 
 <!-- ============ HERO ============ -->
 <div class="hero" id="top">
-  <div class="hero-bg" id="heroBg" aria-hidden="true">
-    <div class="kv-slide" style="background-image:url(images/kv-1.jpg)"></div>
-    <div class="kv-slide" style="background-image:url(images/kv-2.jpg)"></div>
-    <div class="kv-slide" style="background-image:url(images/kv-3.jpg)"></div>
-  </div>
+  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="hero-eyebrow">2058年から来た未来人――<em>その記録は、実在した。</em></p>
     <h1 class="gtitle" data-t="國分玲">國分玲</h1>
