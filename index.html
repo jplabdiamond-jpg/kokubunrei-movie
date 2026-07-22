@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>映画『國分玲』公式サイト｜2026年 全国公開</title>
-<meta name="description" content="2058年から来た未来人――SNSを騒がせた都市伝説を映画化。タイムリープ・ヒューマンサスペンス『國分玲』。主演：船ヶ山哲／美燈みなみ　監督：ロジャー・D・コーエン　2026年 全国公開。">
+<title>映画『國分玲』公式サイト｜2026年8月14日(金)公開</title>
+<meta name="description" content="2058年から来た未来人――SNSを騒がせた都市伝説を映画化。タイムリープ・ヒューマンサスペンス『國分玲』。主演：船ヶ山哲／美燈みなみ　監督：ロジャー・D・コーエン　2026年8月14日(金)、池袋シネマ・ロサ ロードショー。">
 <meta name="theme-color" content="#050506">
 <link rel="icon" href="images/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="映画『國分玲』公式サイト">
-<meta property="og:description" content="未来は決まっているのか。それとも、人は運命を書き換えることができるのか。2026年 全国公開。">
+<meta property="og:description" content="未来は決まっているのか。それとも、人は運命を書き換えることができるのか。2026年8月14日(金)、池袋シネマ・ロサ ロードショー。">
 <meta property="og:image" content="images/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,9 +116,14 @@ nav a:hover{color:#fff}nav a:hover::after{width:100%}
 /* ============ hero ============ */
 .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:-6%;z-index:-2;
-  background:url(images/kv-main.jpg) center/cover no-repeat;
   filter:grayscale(.35) contrast(1.12) brightness(.62);
   animation:breathe 16s ease-in-out infinite alternate;will-change:transform}
+.kv-slide{position:absolute;inset:0;background-position:center;background-size:cover;
+  background-repeat:no-repeat;opacity:0;animation:kvfade 18s infinite}
+.kv-slide:nth-child(1){opacity:1;animation-delay:-2s}
+.kv-slide:nth-child(2){animation-delay:4s}
+.kv-slide:nth-child(3){animation-delay:10s}
+@keyframes kvfade{0%{opacity:0}6%{opacity:1}28%{opacity:1}34%{opacity:0}100%{opacity:0}}
 @keyframes breathe{0%{transform:scale(1.04)}100%{transform:scale(1.14) translateY(-1.5%)}}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;
   background:radial-gradient(ellipse at 50% 55%,rgba(0,0,0,.15),rgba(3,3,4,.9) 78%)}
@@ -353,15 +358,19 @@ html{scroll-behavior:smooth}
 
 <!-- ============ HERO ============ -->
 <div class="hero" id="top">
-  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+  <div class="hero-bg" id="heroBg" aria-hidden="true">
+    <div class="kv-slide" style="background-image:url(images/kv-1.jpg)"></div>
+    <div class="kv-slide" style="background-image:url(images/kv-2.jpg)"></div>
+    <div class="kv-slide" style="background-image:url(images/kv-3.jpg)"></div>
+  </div>
   <div class="hero-inner">
     <p class="hero-eyebrow">2058年から来た未来人――<em>その記録は、実在した。</em></p>
     <h1 class="gtitle" data-t="國分玲">國分玲</h1>
     <p class="hero-en">R E I &nbsp; K O K U B U N</p>
     <p class="hero-copy">未来は決まっているのか。<br>それとも、人は<span class="hl">運命を書き換える</span>ことができるのか。</p>
     <div class="hero-release">
-      <span class="y">2026</span>
-      <span class="t">全国公開</span>
+      <span class="y">2026.8.14</span>
+      <span class="t" style="letter-spacing:.16em;font-size:clamp(13px,3.6vw,20px)">（金）池袋シネマ・ロサ ロードショー</span>
       <span class="s">COMING SOON</span>
     </div>
   </div>
@@ -474,7 +483,7 @@ html{scroll-behavior:smooth}
           <span class="cast-name">船ヶ山哲</span>
         </div>
         <div class="cast-bio">
-          1976年生まれ、神奈川県出身。俳優、歌手として活動する傍ら作家としての顔を持つ。書籍<b>「捨てられた僕と母猫と奇跡」</b>は、14万部のベストセラー。2026年の主な出演作としては、映画「祝山」、映画「３６１」、映画「#拡散」、映画「ポロロ（アニメ）」ドラマ「おちたらおわり」日本テレビ、ドラマ「キスは捜査のあとで」朝日放送、ドラマ「ドラマが飛んだ」東海テレビなどがある。
+          1976年生まれ、神奈川県出身。俳優・歌手・作家として幅広く活動。著書<b>『捨てられた僕と母猫と奇跡』</b>は14万部を超えるベストセラーを記録し、作家としても高い支持を集めている。近年は映像作品への出演を重ね、2026年には映画『祝山』『361』『#拡散』、劇場アニメ『ポロロ コンピュータ王国大冒険』など話題作に出演。ドラマでは日本テレビ『おちたらおわり』をはじめ、『キスは捜査のあとで』などに出演し、俳優として存在感を発揮している。歌手としても活動し、本作では主題歌「TABOO」を担当。表現者として、俳優・音楽・執筆の各分野で精力的な活動を続けている。
         </div>
       </article>
 
@@ -502,18 +511,52 @@ html{scroll-behavior:smooth}
 
       <article class="cast-card reveal">
         <div class="cast-photo">
-          <img src="images/cast-furuya.jpg" alt="フルヤトモヒロ" loading="lazy">
+          <img src="images/cast-furuya.jpg" alt="フルヤトモヒロ" loading="lazy" style="object-position:30% center">
           <span class="cast-role">古田独役</span>
           <span class="cast-name">フルヤトモヒロ</span>
         </div>
         <div class="cast-bio">
-          1981年生まれ、静岡県裾野市出身。シンガーとして「ACO CHiLL CAMP」「ROCKS FORCHILE」等の様々な音楽フェス等へのライブ出演に加え、CMソング、スポーツチーム公式ソング等の楽曲提供を行う。趣味の<b>【特撮】</b>の知識と興味を活かし、特撮に関連する様々なイベントでMCを担当。ラジオパーソナリティとして、ラジオ専門全国誌「ラジオ番組表」内の「好きなDJランキング」において全国第1位を獲得。今年7月からTOKYO MXで放送中のアニメ「クロノブレイバーズ」の主題歌を作詞・作曲・編曲・歌唱。裾野市観光・スポーツ大使。
+          1981年生まれ、静岡県裾野市出身。シンガーとして「ACO CHiLL CAMP」「ROCKS FORCHILE」をはじめ、さまざまな音楽フェスやライブイベントに出演。CMソングやスポーツチームの公式ソングなど、多彩な楽曲提供も行っている。趣味である<b>特撮</b>への深い知識と情熱を生かし、特撮関連イベントではMCとしても活躍。ラジオパーソナリティとしては、全国誌『ラジオ番組表』の「好きなDJランキング」で全国第1位を獲得した。TOKYO MXで放送のアニメ『クロノブレイバーズ』では、主題歌の作詞・作曲・編曲・歌唱を担当。裾野市観光・スポーツ大使も務め、音楽、ラジオ、イベントなど幅広い分野で活動を続けている。本作では、劇中歌「春の海の孤独」を担当する。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d1">
+        <div class="cast-photo">
+          <img src="images/cast-kuroda.jpg" alt="佐藤せるてぃあ" loading="lazy" style="object-position:40% center">
+          <span class="cast-role">黒田泰寿役</span>
+          <span class="cast-name">佐藤せるてぃあ</span>
+        </div>
+        <div class="cast-bio">
+          元プロゲーマーという異色の経歴を持ち、その経験で培った高い集中力と表現力を武器に俳優へ転身。183cmの存在感あるスタイルを生かし、映像作品を中心に活躍の幅を広げている。地上波ドラマ<b>『雫』</b>では宮島圭吾役、『わたしの晴れを選びたい』では蒼真役として主演を務め、『神様からの手紙』ではアキ役で準主演を務めるなど、繊細な人間ドラマから力強いキャラクターまで幅広い役柄を演じ分けてきた。映画『夜空に預けたもの』ではハルク役を熱演し、存在感を発揮。YouTube【佐藤せるてぃあofficialちゃんねる】では、エンターテインメントやゲームなど多彩なコンテンツを発信し、多くのファンから支持を集めている。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d2">
+        <div class="cast-photo">
+          <img src="images/cast-jhon.jpg" alt="松本カズマ" loading="lazy" style="object-position:48% center">
+          <span class="cast-role">ジョン・タイター役</span>
+          <span class="cast-name">松本カズマ</span>
+        </div>
+        <div class="cast-bio">
+          1985年9月8日生まれ、東京都出身。株式会社IR-MORADO所属。身長185cm。サッカー、器械体操、サバイバル知識を特技とし、普通自動車免許、スキューバダイビング、熱波師の資格を持つなど、多彩な経験を演技にも生かしている。ドラマ<b>『花のち晴れ〜花男 Next Season〜』</b>『星乃超能力探偵事務所』『モザイクジャパン』をはじめ数々の映像作品に出演。映画『ワーキング・ホリデー』『結び目』では印象的な演技を披露し、着実にキャリアを重ねてきた。舞台では『ラフテイル・オブ・アラジン』『地図から消されたウサギ島』『エイプリルフールの恋人』など話題作に多数出演し、映像・舞台の両分野で確かな存在感を発揮。本作では未来から現れた謎の人物・ジョン・タイター役を演じ、物語の核心へと迫る重要な存在として、圧倒的な存在感を見せる。
+        </div>
+      </article>
+
+      <article class="cast-card reveal">
+        <div class="cast-photo">
+          <img src="images/cast-enoyama.jpg" alt="水谷淳" loading="lazy">
+          <span class="cast-role">榎山泰斗役</span>
+          <span class="cast-name">水谷淳</span>
+        </div>
+        <div class="cast-bio">
+          三重県出身。早稲田大学卒業後、会社員や自己破産などさまざまな経験を経て俳優の道へ進む。浮気男、ホスト、サイコパス、嘘つき、ヒモ男、天然、クズ男、犯罪者など、癖の強い人物や一筋縄ではいかない役柄に定評があり、独自の存在感を放っている。舞台<b>『藍を染める、君の言葉で』</b>敬介役、『アンモラル・ノイズ』小川直人役、『藍色の迷い傘』瑛人役、『スリーカードモンテ』ヤス役などに出演。映画では『夜空に預けたもの』橘颯真役、『ガラクターズ』高野原匡役を演じたほか、テレビ朝日『林修の今知りたいでしょ！』の再現ドラマでは売人役、チバテレドラマ『波折り』では裳塚瑛斗役を務めるなど、舞台・映画・テレビで幅広く活動している。本作では榎山泰斗役として、危うさと人間味を併せ持つ人物を個性豊かに演じている。
         </div>
       </article>
 
       <article class="cast-card reveal d1">
         <div class="cast-photo">
           <img src="images/cast-mase.jpg" alt="間瀬英正" loading="lazy">
+          <span class="cast-role">北山隼人役</span>
           <span class="cast-name">間瀬英正</span>
         </div>
         <div class="cast-bio">
@@ -524,10 +567,44 @@ html{scroll-behavior:smooth}
       <article class="cast-card reveal d2">
         <div class="cast-photo">
           <img src="images/cast-sato.jpg" alt="佐藤里穂" loading="lazy">
+          <span class="cast-role">北山礼子役</span>
           <span class="cast-name">佐藤里穂</span>
         </div>
         <div class="cast-bio">
           1990年12月18日生まれ、東京都出身。映画、ドラマ、CM、舞台など幅広い分野で活躍する女優。主演映画<b>『火だるま槐多よ』『背中』</b>をはじめ、『福田村事件』『2025年7月5日午前4時18分』など話題作に出演。ドラマではNetflix『全裸監督2』、FOD『REAL恋愛殺人捜査班』などに出演し、繊細で確かな演技力が高く評価されている。近年は三菱UFJ銀行、食べログ、メグミルクなど数多くのCMにも起用され、透明感と存在感を兼ね備えた実力派女優として注目を集めている。
+        </div>
+      </article>
+
+      <article class="cast-card reveal">
+        <div class="cast-photo">
+          <img src="images/cast-suzuki.jpg" alt="鈴木成児" loading="lazy" style="object-position:32% center">
+          <span class="cast-role">豊富英男役</span>
+          <span class="cast-name">鈴木成児</span>
+        </div>
+        <div class="cast-bio">
+          1968年9月28日生まれ、東京都出身。長年にわたりテレビドラマ、映画、吹替など幅広い分野で活躍を続ける実力派俳優。テレビドラマでは<b>『渡る世間は鬼ばかり』</b>『GOOD LUCK!!』『彼女たちの結婚』『君の手がささやいてる』『女にも七人の敵』など数多くの話題作に出演し、確かな演技力で幅広い役柄を演じてきた。映画では『SHIGEOH』『君を忘れない』『居酒屋ゆうれい2』などに出演し、存在感のある演技で作品を支えている。さらに吹替では韓国ドラマ『アクシデント・カップル』で主人公ク・ドンベク役を担当するなど、その表現力は国内外の作品でも高く評価されている。本作では豊富英男役として、物語の重要な局面を担う人物を深みのある演技で表現している。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d1">
+        <div class="cast-photo">
+          <img src="images/cast-usanomiyu.jpg" alt="うさのみゆ" loading="lazy" style="object-position:center 22%">
+          <span class="cast-role">主題歌「Time Leap」</span>
+          <span class="cast-name">うさのみゆ</span>
+        </div>
+        <div class="cast-bio">
+          ドラマや映画のテーマソングを手掛けるアーティスト。上地雄輔、美山加恋出演の地上波ドラマ<b>『ママとパパへのラブレター』</b>では主題歌を担当し、透明感あふれる歌声で注目を集めた。シンガーとしての活動に加え、ラジオパーソナリティ、グラビア、コスプレイヤー、モデル、旅系YouTuber、TikTokerなど幅広い分野で活躍。軽自動車で車中泊をしながら日本一周に挑戦し、その旅の様子をSNSで発信するなど、多彩なライフスタイルも多くの支持を集めている。SNS総フォロワー数は約9万人。RPGエンターテイメント所属。
+        </div>
+      </article>
+
+      <article class="cast-card reveal d2">
+        <div class="cast-photo">
+          <img src="images/cast-shizukup.jpg" alt="ロボットしずくP" loading="lazy" style="object-position:center 28%">
+          <span class="cast-role">主題歌「Time Leap」</span>
+          <span class="cast-name">ロボットしずくP</span>
+        </div>
+        <div class="cast-bio">
+          株式会社RPGエンターテイメント代表。タレント・アイドル・アーティストの育成をはじめ、SNSプロデュースを手掛け、これまで100名以上の育成に携わる。SNS総フォロワー数を数十万人から100万人規模へと成長させた実績を数多く持ち、ライブハウス運営、映像制作、イベント企画など幅広いエンターテインメント事業を展開。<b>「才能を世界へ届ける」</b>を理念に、ドラマ・映画・音楽・SNSを融合した新たなコンテンツを創出し、次世代スターの発掘・育成に取り組んでいる。本作では、うさのみゆとのユニットによる主題歌「Time Leap」のプロデュース・制作を手掛け、作品の世界観を音楽で鮮やかに表現している。
         </div>
       </article>
 
@@ -577,6 +654,8 @@ html{scroll-behavior:smooth}
       <div class="staff-row"><dt>キャスティングP</dt><dd>永井直子</dd></div>
       <div class="staff-row"><dt>題字</dt><dd>月ヶ瀬なつ</dd></div>
       <div class="staff-row"><dt>音楽</dt><dd>Krilena</dd></div>
+      <div class="staff-row"><dt>W主題歌</dt><dd>船ヶ山哲「TABOO」／うさのみゆ&amp;ロボットしずくP「Time Leap」</dd></div>
+      <div class="staff-row"><dt>劇中歌</dt><dd>フルヤトモヒロ「春の海の孤独」</dd></div>
       <div class="staff-row"><dt>撮影</dt><dd>古川大晃</dd></div>
       <div class="staff-row"><dt>録音</dt><dd>一木亮二／牛之濱誠康</dd></div>
       <div class="staff-row"><dt>スタイリスト</dt><dd>日下部実来</dd></div>
@@ -608,8 +687,9 @@ html{scroll-behavior:smooth}
     <div class="sns-links reveal d1">
       <a class="sns-btn" href="https://www.instagram.com/rei_kokubun_movie" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM</span></a>
       <a class="sns-btn" href="https://www.tiktok.com/@2058reikokubun_movie" target="_blank" rel="noopener noreferrer"><span>TIKTOK</span></a>
+      <a class="sns-btn" href="https://x.com/kokubun_movie" target="_blank" rel="noopener noreferrer"><span>X</span></a>
     </div>
-    <p class="sns-note reveal d2">@rei_kokubun_movie ／ @2058reikokubun_movie</p>
+    <p class="sns-note reveal d2">@rei_kokubun_movie ／ @2058reikokubun_movie ／ @kokubun_movie</p>
   </div>
 </section>
 
